@@ -12,3 +12,6 @@ de la carpeta del mismo, para ello puedes ejecutar el siguiente comando:
 python -m SimpleHTTPServer 8000
 
 Luego ir a la ruta localhost:8000 y podras ver el proyecto.
+
+No olvidar hacer bower install para agregar las librerias que
+se requieren para el proyecto. 
