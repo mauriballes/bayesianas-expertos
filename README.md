@@ -9,9 +9,10 @@ que tendra cuando se finalize el proyecto
 Para hacer correr el proyecto se debe levantar un servidor HTTP dentro
 de la carpeta del mismo, para ello puedes ejecutar el siguiente comando:
 
-python -m SimpleHTTPServer 8000
+`python -m SimpleHTTPServer 8000`
 
 Luego ir a la ruta localhost:8000 y podras ver el proyecto.
 
-No olvidar hacer bower install para agregar las librerias que
-se requieren para el proyecto. 
+No olvidar hacer la librerias del proyecto con:
+
+`bower install` 
