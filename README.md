@@ -13,6 +13,6 @@ de la carpeta del mismo, para ello puedes ejecutar el siguiente comando:
 
 Luego ir a la ruta localhost:8000 y podras ver el proyecto.
 
-No olvidar hacer la librerias del proyecto con:
+No olvidar adicionar las librerias del proyecto con:
 
 `bower install` 
