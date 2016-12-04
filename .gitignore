@@ -6,3 +6,6 @@ bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
+
+### IDEA ###
+.idea/
