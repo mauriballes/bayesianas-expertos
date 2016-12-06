@@ -79,7 +79,6 @@ function Grafo() {
     this.insertarArista = function (vOrigen, vDestino, prob) {
         if (!this.existeVertice(vOrigen)) return false;
         if (!this.existeVertice(vDestino)) return false;
-
         var pOrigen = this.posicionVertice(vOrigen);
         if (this.existeVerticeArista(pOrigen, vDestino)) return false;
 
