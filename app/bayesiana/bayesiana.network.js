@@ -30,6 +30,13 @@ function BayesianNetwork(container) {
         }
     };
 
+    this.deleteVertice = function (valor) {
+        var result = this.grafo.eliminarVertice(new Vertice(0, valor));
+
+        if (result)
+            this.rebuild();
+    };
+
     this.addArista = function (vOrigen, vDestino, prob) {
         var result = this.grafo.insertarArista(new Vertice(0, vOrigen), new Vertice(0, vDestino), prob);
         var idOrigen = this.grafo.getVertice(vOrigen).id;
@@ -37,6 +44,17 @@ function BayesianNetwork(container) {
         if (result) {
             this.edges.add({from: idOrigen, to: idDestino, arrows: 'to', label: prob});
         }
+    };
+
+    this.deleteArista = function (vOrigen, vDestino) {
+        var result = this.grafo.eliminarArista(new Vertice(0, vOrigen), new Vertice(0, vDestino));
+
+        if (result)
+            this.rebuild();
+    };
+
+    this.rebuild = function () {
+        // Funcion para reconstruir los atributos nodes y edges a partir del grafo
     };
 
     this.redibujar = function () {

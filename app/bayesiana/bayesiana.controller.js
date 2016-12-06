@@ -14,17 +14,28 @@
         vm.container = document.getElementById('mynetwork');
         vm.red = new BayesianNetwork(vm.container);
 
-        vm.metodo = miMetodo;
+        vm.vertice = {};
+        vm.arista = {};
+
+        vm.addVertice = addVertice;
+        vm.addArista = addArista;
 
         activate();
 
         function activate() {
-            // Hacer algo en el constructor
             vm.red.cargaAcme();
         }
 
-        function miMetodo() {
-            // Rellenar con codigo
+        function addVertice() {
+            vm.red.addVertice(vm.vertice.valor,vm.vertice.CF);
+            vm.red.refreshData();
+            vm.red.redibujar();
+        }
+        
+        function addArista() {
+            vm.red.addArista(vm.arista.vOrigen,vm.arista.vDestino,vm.arista.prob);
+            vm.red.refreshData();
+            vm.red.redibujar();
         }
     }
 })();
