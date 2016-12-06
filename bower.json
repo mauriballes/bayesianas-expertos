@@ -18,7 +18,8 @@
   "dependencies": {
     "angular": "^1.5.9",
     "vis": "^4.17.0",
-    "bootstrap": "^3.3.7",
-    "angular-route": "^1.5.9"
+    "angular-route": "^1.5.9",
+    "materialize": "^0.97.8",
+    "jquery": "^3.1.1"
   }
 }
