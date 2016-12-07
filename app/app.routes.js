@@ -12,6 +12,11 @@
                 controller: 'Bayesiana',
                 controllerAs: 'vm'
             })
+            .when('/inferir',{
+                templateUrl: 'app/inferencia/inferencia.html',
+                controller: 'Inferencia',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });

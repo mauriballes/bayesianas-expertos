@@ -5,25 +5,39 @@
         .module('app')
         .controller('Bayesiana', BayesianaController);
 
-    BayesianaController.$inject = [];
+    BayesianaController.$inject = ['AppService'];
 
-    function BayesianaController() {
+    function BayesianaController(AppService) {
         var vm = this;
 
-        vm.title = 'Hello World!';
         vm.container = document.getElementById('mynetwork');
-        vm.red = new BayesianNetwork(vm.container);
+        vm.red = {};
 
         vm.vertice = {};
         vm.arista = {};
 
+        vm.reload = reload;
         vm.addVertice = addVertice;
         vm.addArista = addArista;
 
         activate();
 
         function activate() {
-            vm.red.cargaAcme();
+            // Obtener la red
+            if (AppService.red === null) {
+                vm.red = new BayesianNetwork(vm.container);
+                vm.red.cargaAcme();
+
+                AppService.red = vm.red;
+            } else{
+                vm.red = AppService.red;
+            }
+            vm.reload();
+        }
+
+        function reload() {
+            vm.red.refreshData();
+            vm.red.redibujar();
         }
 
         function addVertice() {
@@ -31,9 +45,9 @@
             vm.red.refreshData();
             vm.red.redibujar();
         }
-        
+
         function addArista() {
-            vm.red.addArista(vm.arista.vOrigen,vm.arista.vDestino,vm.arista.prob);
+            vm.red.addArista(vm.arista.vOrigen, vm.arista.vDestino, vm.arista.prob);
             vm.red.refreshData();
             vm.red.redibujar();
         }

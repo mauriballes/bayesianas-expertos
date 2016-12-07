@@ -75,8 +75,5 @@ function BayesianNetwork(container) {
         this.addArista('C', 'P', 0.5);
         this.addArista('Q', 'M', 0.5);
         this.addArista('P', 'M', 0.5);
-
-        this.refreshData();
-        this.redibujar();
     };
 }

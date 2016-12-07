@@ -4,6 +4,12 @@
 </nav>
 
 <div class="container">
+    <br>
+    <div class="row">
+        <a class="waves-effect waves-light light-blue btn" href="#inferir">Inferir</a>
+        <button ng-click="vm.reload()" class="btn waves-effect waves-light light-blue">Reload</button>
+    </div>
+
     <div class="row">
         <form class="col s12 m12 l12">
             <div class="col s12 m6 l6">
@@ -13,9 +19,13 @@
                         <input placeholder="Valor" id="valor" type="text" ng-model="vm.vertice.valor">
                         <label for="valor">Valor</label>
                     </div>
-                    <div class="col s12 m12 l12">
+                    <div class="col s12 m6 l6">
                         <button ng-click="vm.addVertice()" class="btn waves-effect waves-light blue darken-4">Adicionar
                             Vertice
+                        </button>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <button ng-click="" class="btn waves-effect waves-light blue darken-4">Eliminar Vertice
                         </button>
                     </div>
                 </div>
@@ -23,21 +33,25 @@
             <div class="col s12 m6 l6">
                 <h5>Arista</h5>
                 <div class="row">
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m4 l4">
                         <input placeholder="Origen" id="origen" type="text" ng-model="vm.arista.vOrigen">
                         <label for="origen">Origen</label>
                     </div>
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m4 l4">
                         <input placeholder="Destino" id="destino" type="text" ng-model="vm.arista.vDestino">
                         <label for="destino">Destino</label>
                     </div>
-                    <div class="input-field col s12 m12 l12">
+                    <div class="input-field col s12 m4 l4">
                         <input placeholder="Probabilidad" id="prob" type="text" ng-model="vm.arista.prob">
                         <label for="prob">Probabilidad</label>
                     </div>
-                    <div class="col s12 m12 l12">
+                    <div class="col s12 m6 l6">
                         <button ng-click="vm.addArista()" class="btn waves-effect waves-light blue darken-4">Adicionar
                             Arista
+                        </button>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <button ng-click="" class="btn waves-effect waves-light blue darken-4">Eliminar Arista
                         </button>
                     </div>
                 </div>
