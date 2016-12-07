@@ -27,7 +27,7 @@
         }
 
         function addVertice() {
-            vm.red.addVertice(vm.vertice.valor,vm.vertice.CF);
+            vm.red.addVertice(vm.vertice.valor);
             vm.red.refreshData();
             vm.red.redibujar();
         }

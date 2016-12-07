@@ -17,9 +17,9 @@ function BayesianNetwork(container) {
         this.red.setData({nodes: this.nodes, edges: this.edges});
     };
 
-    this.addVertice = function (valor, CF) {
+    this.addVertice = function (valor) {
         id_nodes++;
-        var vertice = new Vertice(id_nodes, valor, CF);
+        var vertice = new Vertice(id_nodes, valor);
 
         var result = this.grafo.insertarVertice(vertice);
 
@@ -62,12 +62,12 @@ function BayesianNetwork(container) {
     };
 
     this.cargaAcme = function () {
-        this.addVertice('A', 0.7);
-        this.addVertice('B', 0.7);
-        this.addVertice('C', 0.7);
-        this.addVertice('Q', 0.7);
-        this.addVertice('P', 0.7);
-        this.addVertice('M', 0.7);
+        this.addVertice('A');
+        this.addVertice('B');
+        this.addVertice('C');
+        this.addVertice('Q');
+        this.addVertice('P');
+        this.addVertice('M');
 
         this.addArista('A', 'Q', 0.5);
         this.addArista('B', 'Q', 0.5);
