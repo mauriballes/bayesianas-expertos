@@ -8,6 +8,6 @@
  */
 
 function Arista(vertice, prob) {
-    this.vertice = vertice || 'vertice';
-    this.prob = prob || 1.0;
+    this.vertice = vertice || null;
+    this.prob = prob || 0.0;
 }

@@ -32,17 +32,16 @@ function BayesianNetwork(container) {
 
     this.deleteVertice = function (valor) {
         var result = this.grafo.eliminarVertice(new Vertice(0, valor));
-
         if (result)
             this.rebuild();
     };
 
     this.addArista = function (vOrigen, vDestino, prob) {
-        var result = this.grafo.insertarArista(new Vertice(0, vOrigen), new Vertice(0, vDestino), prob);
-        var idOrigen = this.grafo.getVertice(vOrigen).id;
-        var idDestino = this.grafo.getVertice(vDestino).id;
+        var vertOrigen = this.grafo.getVertice(vOrigen);
+        var vertDestino = this.grafo.getVertice(vDestino);
+        var result = this.grafo.insertarArista(vertOrigen, vertDestino, prob);
         if (result) {
-            this.edges.add({from: idOrigen, to: idDestino, arrows: 'to', label: prob});
+            this.edges.add({from: vertOrigen.id, to: vertDestino.id, arrows: 'to', label: prob});
         }
     };
 
@@ -55,6 +54,25 @@ function BayesianNetwork(container) {
 
     this.rebuild = function () {
         // Funcion para reconstruir los atributos nodes y edges a partir del grafo
+        this.edges.clear();
+        this.nodes.clear();
+
+        // Reconstruir los Vertices
+        var vertices = this.grafo.vertices;
+        for (var i = 0; i < vertices.length; i++)
+            this.nodes.add({id: vertices[i].id, label: vertices[i].valor, color: '#01579B', font: {color: 'white'}});
+
+        // Reconstruir las aristas
+        var aristas = this.grafo.aristas;
+        for (var i = 0; i < aristas.length; i++) {
+            // Obtener aristas de un vertice
+            var aristasVertice = aristas[i];
+            for (var j = 0; j < aristasVertice.length; j++) {
+                var idOrigen = vertices[i].id;
+                var idDestino = aristasVertice[j].vertice.id;
+                this.edges.add({from: idOrigen, to: idDestino, arrows: 'to', label: aristasVertice[j].prob});
+            }
+        }
     };
 
     this.redibujar = function () {

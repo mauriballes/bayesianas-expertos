@@ -19,6 +19,8 @@
         vm.reload = reload;
         vm.addVertice = addVertice;
         vm.addArista = addArista;
+        vm.removeVertice = removeVertice;
+        vm.removeArista = removeArista;
 
         activate();
 
@@ -31,6 +33,7 @@
                 AppService.red = vm.red;
             } else{
                 vm.red = AppService.red;
+                vm.red.rebuild();
             }
             vm.reload();
         }
@@ -48,6 +51,18 @@
 
         function addArista() {
             vm.red.addArista(vm.arista.vOrigen, vm.arista.vDestino, vm.arista.prob);
+            vm.red.refreshData();
+            vm.red.redibujar();
+        }
+
+        function removeVertice() {
+            vm.red.deleteVertice(vm.vertice.valor);
+            vm.red.refreshData();
+            vm.red.redibujar();
+        }
+
+        function removeArista() {
+            vm.red.deleteArista(vm.arista.vOrigen, vm.arista.vDestino);
             vm.red.refreshData();
             vm.red.redibujar();
         }

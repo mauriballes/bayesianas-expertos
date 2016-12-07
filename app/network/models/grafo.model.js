@@ -39,7 +39,7 @@ function Grafo() {
     this.posicionVerticeArista = function (indexArista, vertice) {
         var listArista = this.aristas[indexArista];
         for (var i = 0; i < listArista.length; i++)
-            if (vertice.valor === listArista[i].vertice)
+            if (vertice.valor === listArista[i].vertice.valor)
                 return i;
         return -1;
     };
@@ -71,14 +71,14 @@ function Grafo() {
     this.existeVerticeArista = function (indexArista, vertice) {
         var listArista = this.aristas[indexArista];
         for (var i = 0; i < listArista.length; i++)
-            if (vertice.valor === listArista[i].vertice)
+            if (vertice.valor === listArista[i].vertice.valor)
                 return true;
         return false;
     };
 
     this.insertarArista = function (vOrigen, vDestino, prob) {
-        if (!this.existeVertice(vOrigen)) return false;
-        if (!this.existeVertice(vDestino)) return false;
+        if (vOrigen !== null && !this.existeVertice(vOrigen)) return false;
+        if (vDestino !== null && !this.existeVertice(vDestino)) return false;
         var pOrigen = this.posicionVertice(vOrigen);
         if (this.existeVerticeArista(pOrigen, vDestino)) return false;
 
@@ -87,8 +87,8 @@ function Grafo() {
     };
 
     this.eliminarArista = function (vOrigen, vDestino) {
-        if (!this.existeVertice(vOrigen)) return false;
-        if (!this.existeVertice(vDestino)) return false;
+        if (vOrigen !== null && !this.existeVertice(vOrigen)) return false;
+        if (vDestino !== null && !this.existeVertice(vDestino)) return false;
 
         var pOrigen = this.posicionVertice(vOrigen);
         if (!this.existeVerticeArista(pOrigen, vDestino)) return false;
