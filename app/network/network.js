@@ -79,6 +79,11 @@ function BayesianNetwork(container) {
         this.red.redraw();
     };
 
+    this.restart = function (container) {
+        this.container = container;
+        this.red = new vis.Network(this.container, {nodes: this.nodes, edges: this.edges}, {});
+    };
+
     this.cargaAcme = function () {
         this.addVertice('A');
         this.addVertice('B');

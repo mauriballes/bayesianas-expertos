@@ -33,7 +33,7 @@
                 AppService.red = vm.red;
             } else{
                 vm.red = AppService.red;
-                vm.red.rebuild();
+                vm.red.restart(vm.container);
             }
             vm.reload();
         }
