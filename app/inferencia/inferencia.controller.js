@@ -10,14 +10,14 @@
     function InferenciaController(AppService) {
         var vm = this;
 
-        vm.message = 'Hello World!';
+        vm.message = 'Inferencia!';
         vm.red = {};
         
         activate();
         
         function activate() {
             if(AppService.red === null)
-                vm.message = 'Cargue la red';
+                vm.message = 'Cargue la red para la inferencia...';
             else
                 vm.red = AppService.red;
         }
