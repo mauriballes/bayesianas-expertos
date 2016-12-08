@@ -8,8 +8,25 @@
     <div class="row">
         <p>{{ vm.message }}</p>
         <a class="waves-effect waves-light orange btn" href="#/">Red</a>
+        <button ng-click="vm.getMetas()" class="btn waves-effect waves-light orange">Obtener Metas</button>
+        <button ng-click="vm.getCFsMetas()" class="btn waves-effect waves-light orange">Inferir Metas</button>
     </div>
     <div class="row">
-
+        <div class="col s12 m6 l6">
+            <table class="centered striped">
+                <thead>
+                <tr>
+                    <th data-field="id">Meta</th>
+                    <th data-field="name">Factor de Certeza (CF)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="meta in vm.metas">
+                    <td>{{ meta.valor }}</td>
+                    <td>{{ meta.CF }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

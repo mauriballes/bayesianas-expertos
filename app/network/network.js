@@ -39,10 +39,11 @@ function BayesianNetwork(container) {
 
     this.CFHecho = function (vertice) {
         // Cuando el vertice es hecho, devuelve el cf dado por el cliente
-        var dato = prompt('Inserte Factor de Certeza:', 0.5);
+        if(vertice.CF !== 0.0) return vertice.CF;
+        var dato = prompt('Inserte Factor de Certeza de '+ vertice.valor +':', 0.5);
         var value = 0.0;
-        if (dato !== null && typeof dato == 'number')
-            value = dato;
+        if (dato !== null)
+            value = parseFloat(dato);
         this.grafo.setVerticeCF(vertice.valor, value);
         return value;
     };
@@ -62,7 +63,7 @@ function BayesianNetwork(container) {
         var v = this.getAdy(vertice);
         var ac = 0.0;
         for (var i = 0; i < v.length; i++)
-            ac += (this.getCF(v[i]) * this.getProb(v[i]));
+            ac += (this.getCF(v[i]) * this.getProb(v[i], vertice));
         return ac;
     };
 
@@ -156,11 +157,11 @@ function BayesianNetwork(container) {
         this.addVertice('P');
         this.addVertice('M');
 
-        this.addArista('A', 'Q', 0.5);
-        this.addArista('B', 'Q', 0.5);
+        this.addArista('A', 'Q', 0.2);
+        this.addArista('B', 'Q', 0.8);
         this.addArista('B', 'P', 0.5);
         this.addArista('C', 'P', 0.5);
-        this.addArista('Q', 'M', 0.5);
-        this.addArista('P', 'M', 0.5);
+        this.addArista('Q', 'M', 0.3);
+        this.addArista('P', 'M', 0.7);
     };
 }

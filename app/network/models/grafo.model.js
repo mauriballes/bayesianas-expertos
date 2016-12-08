@@ -37,7 +37,7 @@ function Grafo() {
         var index = this.getVerticeIndex(vOrigen);
         var aristas = this.aristas[index];
         for (var i = 0; i < aristas.length; i++)
-            if(aristas[i].vertice.valor === vDestino.valor)
+            if (aristas[i].vertice.valor === vDestino.valor)
                 return aristas[i];
         return null;
     };
@@ -52,6 +52,11 @@ function Grafo() {
     };
 
     // Metodos
+
+    this.cleanCFs = function () {
+        for (var i = 0; i < this.vertices.length; i++)
+            this.vertices[i].CF = 0.0;
+    };
 
     this.existeVertice = function (vertice) {
         for (var i = 0; i < this.vertices.length; i++)
