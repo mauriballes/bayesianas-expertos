@@ -20,6 +20,37 @@ function Grafo() {
         return null;
     };
 
+    this.getVerticeByIndex = function (index) {
+        if (index < 0 || index > this.vertices.length - 1)
+            return null;
+        return this.vertices[index];
+    };
+
+    this.getVerticeIndex = function (vertice) {
+        for (var i = 0; i < this.vertices.length; i++)
+            if (vertice.valor === this.vertices[i].valor)
+                return i;
+        return -1;
+    };
+
+    this.getArista = function (vOrigen, vDestino) {
+        var index = this.getVerticeIndex(vOrigen);
+        var aristas = this.aristas[index];
+        for (var i = 0; i < aristas.length; i++)
+            if(aristas[i].vertice.valor === vDestino.valor)
+                return aristas[i];
+        return null;
+    };
+
+    // Setters
+    this.setVerticeCF = function (valor, CF) {
+        for (var i = 0; i < this.vertices.length; i++)
+            if (valor === this.vertices[i].valor) {
+                this.vertices[i].CF = CF;
+                return;
+            }
+    };
+
     // Metodos
 
     this.existeVertice = function (vertice) {

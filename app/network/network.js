@@ -13,6 +13,70 @@ function BayesianNetwork(container) {
 
     var id_nodes = 0;
 
+    this.getAdy = function (vertice) {
+        // Devuelve los vertices entrantes al vertice en un vector
+        var aristas = this.grafo.aristas;
+        var vect = [];
+
+        for (var i = 0; i < aristas.length; i++) {
+            var aristaVect = aristas[i];
+            for (var j = 0; j < aristaVect.length; j++) {
+                if (vertice.valor === aristaVect[j].vertice.valor) {
+                    vect.push(this.grafo.getVerticeByIndex(i));
+                    break;
+                }
+            }
+        }
+        return vect;
+    };
+
+    this.isHecho = function (vertice) {
+        // Valida si el vertice es Hecho Nativo
+        if ((this.getAdy(vertice)).length === 0)
+            return true;
+        return false;
+    };
+
+    this.CFHecho = function (vertice) {
+        // Cuando el vertice es hecho, devuelve el cf dado por el cliente
+        var dato = prompt('Inserte Factor de Certeza:', 0.5);
+        var value = 0.0;
+        if (dato !== null && typeof dato == 'number')
+            value = dato;
+        this.grafo.setVerticeCF(vertice.valor, value);
+        return value;
+    };
+
+    this.getProb = function (vOrigen, vDestino) {
+        // Devuelve la probabilidad de un arista
+        var arista = this.grafo.getArista(vOrigen, vDestino);
+        if (arista !== null)
+            return arista.prob;
+        else
+            return 0.0;
+    };
+
+    this.getCF = function (vertice) {
+        // Devuelve el CF calculado de un vertice
+        if (this.isHecho(vertice)) return this.CFHecho(vertice);
+        var v = this.getAdy(vertice);
+        var ac = 0.0;
+        for (var i = 0; i < v.length; i++)
+            ac += (this.getCF(v[i]) * this.getProb(v[i]));
+        return ac;
+    };
+
+    this.getMetas = function () {
+        var vertices = this.grafo.vertices;
+        var metas = [];
+        for (var i = 0; i < vertices.length; i++) {
+            var index = this.grafo.getVerticeIndex(vertices[i]);
+            if (this.grafo.aristas[index].length === 0)
+                metas.push(vertices[i]);
+        }
+        return metas;
+    };
+
     this.refreshData = function () {
         this.red.setData({nodes: this.nodes, edges: this.edges});
     };
