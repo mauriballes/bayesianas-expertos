@@ -10,5 +10,5 @@
 function Vertice(id, valor, CF) {
     this.id = id || 0;
     this.valor = valor || 'vertice';
-    this.CF = CF || 0.0;
+    this.CF = CF || -1.0;
 }

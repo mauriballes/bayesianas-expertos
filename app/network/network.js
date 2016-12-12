@@ -39,7 +39,7 @@ function BayesianNetwork(container) {
 
     this.CFHecho = function (vertice) {
         // Cuando el vertice es hecho, devuelve el cf dado por el cliente
-        if(vertice.CF !== 0.0) return vertice.CF;
+        if(vertice.CF !== -1.0) return vertice.CF;
         var dato = prompt('Inserte Factor de Certeza de '+ vertice.valor +':', 0.5);
         var value = 0.0;
         if (dato !== null)
