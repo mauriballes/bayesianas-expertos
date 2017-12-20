@@ -55,7 +55,7 @@ function Grafo() {
 
     this.cleanCFs = function () {
         for (var i = 0; i < this.vertices.length; i++)
-            this.vertices[i].CF = 0.0;
+            this.vertices[i].CF = -1.0;
     };
 
     this.existeVertice = function (vertice) {
