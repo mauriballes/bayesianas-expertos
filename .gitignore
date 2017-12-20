@@ -7,5 +7,9 @@ src/bower_components/
 .bower-registry
 .bower-tmp
 
+### Node ###
+node_modules/
+package-lock.json
+
 ### IDEA ###
 .idea/
