@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "cd src && bower install"
+    "postinstall": "cd src && ../node_modules/.bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "serve-static": "^1.13.1"
+  },
+  "devDependencies": {
+    "bower": "^1.8.2"
   }
 }
