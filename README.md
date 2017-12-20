@@ -6,16 +6,23 @@ que tendra cuando se finalize el proyecto
 
 ## Funcionamiento
 
-Para hacer correr el proyecto se debe levantar un servidor HTTP dentro
-de la carpeta del mismo, para ello puedes ejecutar el siguiente comando:
+### Live
 
-`python -m SimpleHTTPServer 8000`
+Si quieres puedes ver el funcionamiento de app ingresando en esta ![url](https://young-anchorage-40499.herokuapp.com)
 
-Luego ir a la ruta localhost:8000 y podras ver el proyecto.
+### Local
 
-No olvidar adicionar las librerias del proyecto con:
+Para hacer correr el proyecto, primero necesitas tener instalado `node` y `npm`
+una vez tengas hayas clonado el repositorio, dentro de la carpeta del proyecto debes
+ejecutar los siguientes comandos:
 
-`bower install` 
+`npm install && npm run postinstall`
+
+Para hacer correr el proyecto se debe ejecutar el siguiente comando:
+
+`npm start`
+
+Luego ir a la ruta localhost:3000 y podras ver el proyecto.
 
 ## Licencia
 
