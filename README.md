@@ -8,7 +8,7 @@ que tendra cuando se finalize el proyecto
 
 ### Live
 
-Si quieres puedes ver el funcionamiento de app ingresando en esta [url](https://young-anchorage-40499.herokuapp.com)
+Si quieres puedes ver el funcionamiento de app ingresando en esta [url](http://bayesianas.mauriballes.me).
 
 ### Local
 
