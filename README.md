@@ -1,8 +1,8 @@
 # Proyecto de Sistemas Expertos
 
-Este es un proyecto de para la materia de sistemas expertos, el mismo
+Este es un proyecto para la materia de sistemas expertos, el mismo
 consiste en un representacion de un red bayesiana con otras funcionalidades
-que tendra cuando se finalize el proyecto 
+que tendra cuando se finalize el proyecto
 
 ## Funcionamiento
 
@@ -49,4 +49,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
