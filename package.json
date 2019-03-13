@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "cd src && ../node_modules/.bin/bower install"
+    "postinstall": "cd src && ../node_modules/.bin/bower install --allow-root"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,4 @@
+/node-modules
+/.git
+package-lock.json
+/src/bower-components
