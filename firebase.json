@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": "src",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "src/bower_components/jquery/src/",
+      "src/bower_components/materialize/bin/",
+      "src/bower_components/materialize/extras/",
+      "src/bower_components/materialize/fonts/",
+      "src/bower_components/materialize/js/",
+      "src/bower_components/materialize/sass/",
+      "src/bower_components/materialize/templates/",
+      "src/bower_components/materialize/test/",
+      "src/bower_components/materialize/tests/",
+      "src/bower_components/vis/docs/",
+      "src/bower_components/vis/examples/"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
