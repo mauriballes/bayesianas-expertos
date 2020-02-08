@@ -10,6 +10,9 @@ spec:
     matchLabels:
       app: bayesianas
   template:
+    metadata:
+      labels:
+        app: bayesianas
     spec:
       containers:
         - name: bayesianas
