@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bayesianas
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: bayesianas
+          image: mauriballes/bayesianas:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
