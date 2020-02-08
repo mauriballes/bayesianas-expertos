@@ -8,7 +8,7 @@ que tendra cuando se finalize el proyecto
 
 ### Live
 
-Si quieres puedes ver el funcionamiento de app ingresando en esta [url](http://bayesianas.mauriballes.me).
+Si quieres puedes ver el funcionamiento de app ingresando en esta [url](http://bayesianas.mauriballes.com).
 
 ### Local
 
@@ -29,7 +29,7 @@ Luego ir a la ruta localhost:3000 y podras ver el proyecto.
 ```
 MIT License
 
-Copyright (c) 2017 Mauricio Ballesteros Valladares
+Copyright (c) 2017 - 2020 Mauricio Ballesteros Valladares
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
