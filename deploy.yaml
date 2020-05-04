@@ -1,0 +1,64 @@
+# Kubernetes files
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bayesianas-deployment
+  namespace: production
+  labels:
+    app: bayesianas
+    version: "1.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bayesianas
+      version: "1.0"
+  template:
+    metadata:
+      labels:
+        app: bayesianas
+        version: "1.0"
+    spec:
+      containers:
+        - name: bayesianas
+          image: mauriballes/bayesianas:1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 102Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bayesianas-service
+  namespace: production
+spec:
+  selector:
+    app: bayesianas
+    version: "1.0"
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: bayesianas-ingress
+  namespace: production
+spec:
+  rules:
+    - host: bayesianas.mauriballes.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: bayesianas-service
+              servicePort: 80
