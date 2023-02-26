@@ -9,7 +9,6 @@ src/bower_components/
 
 ### Node ###
 node_modules/
-package-lock.json
 
 ### IDEA ###
 .idea/
