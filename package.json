@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "cd src && ../node_modules/.bin/bower install --allow-root"
+    "build": "cd src && ../node_modules/.bin/bower install --allow-root"
   },
   "repository": {
     "type": "git",

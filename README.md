@@ -16,7 +16,7 @@ Para hacer correr el proyecto, primero necesitas tener instalado `node` y `npm`
 una vez tengas hayas clonado el repositorio, dentro de la carpeta del proyecto debes
 ejecutar los siguientes comandos:
 
-`npm install && npm run postinstall`
+`npm install && npm run build`
 
 Para hacer correr el proyecto se debe ejecutar el siguiente comando:
 
